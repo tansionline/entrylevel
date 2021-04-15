@@ -27,7 +27,7 @@ export default {
     <div class="container">
       <div class="register-card">
         <h1>Register</h1>
-        <form>
+        <form @submit.prevent="register">
           <label for="email">Email:</label>
           <input
             type="email"
@@ -67,8 +67,8 @@ input[type='submit'] {
   width: 100%;
   background-color: #4caf50;
   color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
+  padding: 0.9em 1.2em;
+  margin: 0.5em 0;
   border: none;
   border-radius: 0.2em;
   cursor: pointer;
@@ -79,8 +79,8 @@ input[type='submit']:hover {
 }
 
 div {
-  border-radius: 5px;
-  padding: 20px;
+  border-radius: 0.2em;
+  padding: 1em;
 }
 
 .container {
