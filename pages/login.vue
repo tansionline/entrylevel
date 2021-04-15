@@ -7,13 +7,13 @@ export default {
     }
   },
   methods: {
-    async register() {
+    async login() {
       try {
-        await this.$fire.auth.createUserWithEmailAndPassword(
+        await this.$fire.auth.signInWithEmailAndPassword(
           this.email,
           this.password
         )
-        this.$router.push('/login')
+        this.$router.push('/profile')
       } catch (e) {
         alert(e)
       }
@@ -25,8 +25,8 @@ export default {
 <template>
   <div class="container-fluid">
     <div>
-      <h1>Register</h1>
-      <b-form @submit.prevent="register">
+      <h1>Login</h1>
+      <b-form @submit.prevent="login">
         <b-form-group label="Email address:" label-for="email">
           <b-form-input
             id="email"
@@ -45,7 +45,7 @@ export default {
             required
           ></b-form-input>
         </b-form-group>
-        <b-button type="submit" variant="primary">Register</b-button>
+        <b-button type="submit" variant="primary">Login</b-button>
       </b-form>
     </div>
   </div>
