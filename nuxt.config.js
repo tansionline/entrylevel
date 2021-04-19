@@ -11,10 +11,10 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: ['@fortawesome/fontawesome-svg-core/styles.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: ['~/plugins/fontawesome.js'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -45,7 +45,7 @@ export default {
           appId: '1:247921238998:web:b78ba1b878788c941efa77',
         },
         services: {
-          auth: true, // Just as example. Can be any other service.
+          auth: true,
         },
       },
     ],
