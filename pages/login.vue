@@ -13,7 +13,7 @@ export default {
           this.email,
           this.password
         )
-        this.$router.push('/first-setup')
+        this.$router.push('/')
       } catch (e) {
         alert(e)
       }
