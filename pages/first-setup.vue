@@ -15,18 +15,18 @@ export default {
 </script>
 
 <template>
-  <div class="container-fluid">
-    <div class="card" v-on:click="hr">
-      <div class="container">
-        <h4>I Am HR</h4>
-      </div>
-    </div>
-    <div class="card" v-on:click="employe">
-      <div class="container">
-        <h4>I Am Employe</h4>
-      </div>
-    </div>
-  </div>
+  <b-container fluid>
+    <b-row align-v="center">
+      <b-col cols="6">
+        <div class="card">
+          <h1>Hello</h1>
+        </div>
+      </b-col>
+      <b-col cols="6">
+        <h1>Hello</h1>
+      </b-col>
+    </b-row>
+  </b-container>
 </template>
 
 <style scoped>
@@ -42,11 +42,5 @@ export default {
 
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-}
-
-.container {
-  display: flex;
-
-  padding: 2px 16px;
 }
 </style>
