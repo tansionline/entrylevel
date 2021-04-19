@@ -23,69 +23,40 @@ export default {
 </script>
 
 <template>
-  <div class="container-fluid">
-    <div class="container">
-      <div class="login-card">
-        <h1>Login</h1>
-        <form @submit.prevent="login">
-          <label for="email">Email:</label>
-          <input
-            type="email"
-            v-model="email"
-            name="email"
-            placeholder="cagatay@cali.com"
-          />
+  <b-container fluid>
+    <b-row align-v="center" align-h="center" class="p-5">
+      <b-col cols="6" align-self="center">
+        <h2 align="center" class="mb-5">Lets Dive in</h2>
+        <b-form @submit.prevent="login">
+          <b-form-group label="Email address:" label-for="email">
+            <b-form-input
+              v-model="email"
+              type="email"
+              name="email"
+              placeholder="cagatay@cali.com"
+              required
+            ></b-form-input>
+          </b-form-group>
 
-          <label for="password">Password:</label>
-          <input
-            type="password"
-            v-model="password"
-            name="password"
-            placeholder="***********"
-          />
-          <a href="/register">Dont have account</a>
-          <input type="submit" value="Submit" />
-        </form>
-      </div>
-    </div>
-  </div>
+          <b-form-group label="Password:" label-for="password">
+            <b-form-input
+              v-model="password"
+              type="password"
+              name="password"
+              placeholder="***********"
+              required
+            ></b-form-input>
+          </b-form-group>
+          <a href="/register">You dont have a account</a>
+
+          <b-button
+            class="btn btn-lg btn-block mt-4"
+            variant="primary"
+            type="submit"
+            >Login</b-button
+          >
+        </b-form>
+      </b-col>
+    </b-row>
+  </b-container>
 </template>
-
-<style scoped>
-input[type='email'],
-input[type='password'] {
-  width: 100%;
-  padding: 0.5em 1.5em;
-  margin: 0.4em;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-input[type='submit'] {
-  width: 100%;
-  background-color: #4caf50;
-  color: white;
-  padding: 0.9em 1.2em;
-  margin: 0.5em 0;
-  border: none;
-  border-radius: 0.2em;
-  cursor: pointer;
-}
-
-input[type='submit']:hover {
-  background-color: #45a049;
-}
-
-div {
-  border-radius: 0.2em;
-  padding: 1em;
-}
-
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-</style>
