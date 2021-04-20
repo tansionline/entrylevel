@@ -2,11 +2,13 @@
 export default {
   data() {
     return {
+      props: ['value', 'name'],
+
       form: {
         companyName: '',
         contactEmail: '',
-        workPlace: [],
-        checked: [],
+        workPlace: '',
+        tech: [],
       },
     }
   },
@@ -19,10 +21,10 @@ export default {
 </script>
 
 <template>
-  <b-container fluid>
+  <b-container>
     <b-row align-v="center">
       <b-col cols="12" align="center">
-        <div class="card">
+        <b-card>
           <b-row>
             <b-col>
               <h1>İlan Paylaş</h1>
@@ -41,8 +43,18 @@ export default {
                   ></b-form-input>
                 </b-form-group>
 
+                <b-form-group label="Calisma Tipi:" label-for="workPlace">
+                  <b-form-input
+                    id="workPlace"
+                    v-model="form.workPlace"
+                    type="text"
+                    placeholder="Remote/Istanbul"
+                    required
+                  ></b-form-input>
+                </b-form-group>
+
                 <b-form-group
-                  label="Iletisim Email Adresi:"
+                  label="Iletisim icin Email Adresi:"
                   label-for="contactEmail"
                 >
                   <b-form-input
@@ -54,24 +66,32 @@ export default {
                   ></b-form-input>
                 </b-form-group>
 
-                <b-form-group id="input-group-4" v-slot="{ ariaDescribedby }">
+                <b-form-group
+                  id="tech"
+                  v-slot="{ ariaDescribedby }"
+                  label="Teknolojiler"
+                >
                   <b-form-checkbox-group
-                    id="checkboxes-4"
-                    v-model="form.checked"
+                    id="tech"
+                    v-model="form.tech"
                     :aria-describedby="ariaDescribedby"
                   >
-                    <b-form-checkbox value="me">Check me out</b-form-checkbox>
+                    <b-form-checkbox value="allTech.javascript"
+                      >Javascript</b-form-checkbox
+                    >
                     <b-form-checkbox value="that"
                       >Check that out</b-form-checkbox
                     >
                   </b-form-checkbox-group>
                 </b-form-group>
 
-                <b-button type="submit" variant="primary">Submit</b-button>
+                <b-button type="submit" variant="primary"
+                  >Ilani Gonder</b-button
+                >
               </b-form>
             </b-col>
           </b-row>
-        </div>
+        </b-card>
       </b-col>
     </b-row>
   </b-container>
@@ -79,16 +99,6 @@ export default {
 
 <style scoped>
 .card {
-  padding: 1rem;
-  align-items: center;
-  justify-content: center;
-
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
-  width: 40%;
-}
-
-.card:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 </style>
